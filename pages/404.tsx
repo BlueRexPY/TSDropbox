@@ -3,7 +3,7 @@ import { Alert } from 'react-bootstrap';
 const notFound = () => {
     return (
       <Layout title={"Page not found"}>
-        <Alert variant="danger" dismissible>
+        <Alert variant="danger">
             <Alert.Heading>Page not found!</Alert.Heading>
             <p>
             Looks like you weren't supposed to be here.

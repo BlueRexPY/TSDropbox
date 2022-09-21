@@ -1,17 +1,32 @@
+
+import AuthStore from '@/store/AuthStore';
 import { Dropbox } from 'dropbox';
+import { IFile } from '../models/IFile';
 
 
-const accessToken = "";
-
-const dbx = new Dropbox({  
-  accessToken  
-});
 
 export default class FolderService {
     static async fetchData(path: string){
-        dbx.filesListFolder({  
+        const accessToken = AuthStore.AuthSettings.accessToken
+        const dbx = new Dropbox({  
+            accessToken
+          });
+
+        let data:IFile[]=[]
+        await dbx.filesListFolder({  
             path: path  
-        }).then(response => {console.log(response)})
+        }).then(response => {data = response.result.entries;}).catch(e=>console.log(e))
+        return data
+    }
+    static async delete(path: string){
+        const accessToken = AuthStore.AuthSettings.accessToken
+        const dbx = new Dropbox({  
+            accessToken
+          });
+
+        await dbx.filesDeleteV2({  
+            path: path  
+        })
     }
 
 }

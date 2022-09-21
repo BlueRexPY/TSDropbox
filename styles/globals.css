@@ -12,4 +12,32 @@ body {
 a{
   text-decoration: none;
   transition: 0.2s;
+  color: #fff;
 }
+
+.breadcrumb a{
+  text-decoration: none;
+  transition: 0.2s;
+  color: #212121;
+}
+
+.mainList{
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+p{
+  margin: 3px;
+}
+
+.top{
+  z-index: 100;
+}
+
+@media (max-width: 600px) {
+  p{
+    font-size: 12px;
+    margin: 3px;
+  }
+}
+

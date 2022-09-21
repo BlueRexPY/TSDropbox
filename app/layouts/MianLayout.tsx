@@ -1,7 +1,7 @@
 import React from "react";
 import Head from "next/head";
 import { ReactChild, ReactNode} from "react";
-import ToolBar from '@/components/ToolBar/ToolBar';
+import ToolBar from '@/components/ToolBar';
 import { Col, Container, Row } from "react-bootstrap";
 
 type Props = {
@@ -30,7 +30,7 @@ const Layout = (props: Props) => {
       <ToolBar/>
       <Container>
         <Row>
-          <Col>{props.children}</Col>
+          <Col className="mainList" md={{ span: 2, offset: 2 }} lg="8">{props.children}</Col>
         </Row>
       </Container>
     </div>
