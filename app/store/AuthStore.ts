@@ -12,11 +12,15 @@ class AuthStore {
             Logout: action
         })
     }
-    Login(accessToken:string) {
-        this.AuthSettings = { auth: true, accessToken:accessToken }
+    Login(accessToken: string) {
+        if (accessToken.length === 143) {
+            this.AuthSettings = { auth: true, accessToken: accessToken }
+        }else{
+            this.AuthSettings = { ...this.AuthSettings, auth: false }
+        }
     };
     Logout() {
-        this.AuthSettings = { auth: false, accessToken:this.AuthSettings.accessToken }
+        this.AuthSettings = { ...this.AuthSettings, auth: false }
     };
 }
 

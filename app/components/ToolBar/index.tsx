@@ -1,6 +1,6 @@
-import Link from 'next/link'
-import React from 'react'
-import { Container, Nav, Navbar, Stack} from 'react-bootstrap'
+import Link from "next/link";
+import React from "react";
+import { Container, Nav, Navbar, Stack } from "react-bootstrap";
 
 const ToolBar = () => {
   return (
@@ -9,8 +9,8 @@ const ToolBar = () => {
         <Navbar.Brand>
           <Link href={"/"}>DropBox</Link>
         </Navbar.Brand>
-        <Navbar.Toggle/>
-          <Navbar.Collapse>
+        <Navbar.Toggle />
+        <Navbar.Collapse>
           <Stack direction="horizontal" gap={2}>
             <Nav>
               <Link href={"/"}>Token</Link>
@@ -18,11 +18,11 @@ const ToolBar = () => {
             <Nav>
               <Link href={"/dropbox/_"}>Files</Link>
             </Nav>
-            </Stack>
-          </Navbar.Collapse>
+          </Stack>
+        </Navbar.Collapse>
       </Container>
     </Navbar>
-  )
-}
+  );
+};
 
-export default ToolBar
+export default ToolBar;
